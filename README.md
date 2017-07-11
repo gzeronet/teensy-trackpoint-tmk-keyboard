@@ -29,6 +29,11 @@ Actually, I just convert [arduino-trackpoint-extended](https://github.com/rampad
 
 ## Wiring Diagram
 
+1. teensy & trackpoint
+![](img/teensy-trackpoint.png)
+
+2. keyboard matrix
+
 drawing,...
 
 # To be continue...
