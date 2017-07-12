@@ -25,15 +25,29 @@ You can get all of them from [taobao](https://www.taobao.com/).
 * [tmk_keyboard](https://github.com/tmk/tmk_keyboard)  # awesome project. You have to know how to build a kb(gh60) firemware.
 * [teensyduino](https://www.pjrc.com/teensy/teensyduino.html)  # teensyduino is an add-on for the Arduino software. Please install arduino first.
 
-Actually, I just convert [arduino-trackpoint-extended](https://github.com/rampadc/arduino-trackpoint-extended) project to c, and let it work on tmk env, nothing else. Thanks for the sharing.
+Actually, I just convert [arduino-trackpoint-extended](https://github.com/rampadc/arduino-trackpoint-extended) project to c, and let it work on tmk env, nothing else. Thanks for the author sharing.
 
 ## Wiring Diagram
 
-1. teensy & trackpoint
+* teensy & trackpoint
+
 ![](img/teensy-trackpoint.png)
 
-2. keyboard matrix
+* keyboard matrix
 
-drawing,...
+![](img/keyboard-matrix.png)
 
-# To be continue...
+    cols: B7,B3,B2,B1,D3,C6,B6,B5,B4,D7,D5,D4,D6
+    rols: F1,F4,F5,F6,F7
+
+## Build Firmware
+
+### To be continue...
+
+---
+
+## References:
+
+[Custom 65% finally finished](https://deskthority.net/workshop-f7/brownfox-step-by-step-t6050.html)
+
+
