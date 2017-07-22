@@ -1,0 +1,44 @@
+diff --git a/tmk_core/common/keyboard.c b/tmk_core/common/keyboard.c
+index 6057ea1..dae4a44 100644
+--- a/tmk_core/common/keyboard.c
++++ b/tmk_core/common/keyboard.c
+@@ -44,6 +44,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ #include "adb.h"
+ #endif
+ 
++#include "usb_mouse.h"
++#include "core_pins.h"
++#include "wiring.h"
++#include "trackpoint.h"
++
++Trackpoint tp;
++
++void clockInterrupt(void) {
++    getDataBit(&tp);
++    if(reportAvailable(&tp)) {
++        DataReport d = getStreamReport(&tp);
++        usb_mouse_send(-d.x, d.y, 0, 0, (d.state % 16 == 8) ? 1 : 0);
++    }
++}
+ 
+ #ifdef MATRIX_HAS_GHOST
+ static bool has_ghost_in_row(uint8_t row)
+@@ -66,6 +80,7 @@ static bool has_ghost_in_row(uint8_t row)
+ void keyboard_setup(void)
+ {
+     matrix_setup();
++    trackpoint_setup(&tp);
+ }
+ 
+ void keyboard_init(void)
+@@ -90,6 +105,10 @@ void keyboard_init(void)
+ #ifdef BACKLIGHT_ENABLE
+     backlight_init();
+ #endif
++    trackpoint_reset(&tp);
++    // setSensitivityFactor(&tp, 0xC0);
++    setStreamMode(&tp);
++    attachInterrupt(PIN_CLOCK_INT, clockInterrupt, FALLING);
+ }
+ 
+ /*
