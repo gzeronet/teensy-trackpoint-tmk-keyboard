@@ -42,6 +42,13 @@ Actually, I just convert [arduino-trackpoint-extended](https://github.com/rampad
 
 ## Build Firmware
 
+Command for build hex file: tp60_pjrc.hex
+
+    cd teensy-trackpoint-tmk-keyboard
+    make KEYMAP=tp -f Makefile.pjrc
+
+And then, use [teensy loader](https://www.pjrc.com/teensy/loader.html).
+
 ### To be continue...
 
 ---
