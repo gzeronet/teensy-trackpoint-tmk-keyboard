@@ -22,11 +22,11 @@ void led_set(uint8_t usb_led)
 {
     if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
         // output low
-        DDRE |= (1<<6);
-        PORTE &= ~(1<<6);
+        DDRD |= (1<<6);
+        PORTD &= ~(1<<6);
     } else {
         // Hi-Z
-        DDRE &= ~(1<<6);
-        PORTE &= ~(1<<6);
+        DDRD &= ~(1<<6);
+        PORTD &= ~(1<<6);
     }
 }
