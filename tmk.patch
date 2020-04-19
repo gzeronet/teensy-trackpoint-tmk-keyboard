@@ -1,5 +1,5 @@
 diff --git a/tmk_core/common/keyboard.c b/tmk_core/common/keyboard.c
-index 6057ea1..dae4a44 100644
+index 2302acb7..013956bb 100644
 --- a/tmk_core/common/keyboard.c
 +++ b/tmk_core/common/keyboard.c
 @@ -44,6 +44,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -17,7 +17,7 @@ index 6057ea1..dae4a44 100644
 +    getDataBit(&tp);
 +    if(reportAvailable(&tp)) {
 +        DataReport d = getStreamReport(&tp);
-+        usb_mouse_send(-d.x, d.y, 0, 0, (d.state % 16 == 8) ? 1 : 0);
++        usb_mouse_send(-d.x, d.y, 0, 0, d.state % 16 % 7);  // BTN1: 1, BTN2: 2, BTN3: 4
 +    }
 +}
  
@@ -36,7 +36,7 @@ index 6057ea1..dae4a44 100644
      backlight_init();
  #endif
 +    trackpoint_reset(&tp);
-+    // setSensitivityFactor(&tp, 0xC0);
++    setSensitivityFactor(&tp, 0x60);  // 0x00 ~ 0xFF;
 +    setStreamMode(&tp);
 +    attachInterrupt(PIN_CLOCK_INT, clockInterrupt, FALLING);
  }
