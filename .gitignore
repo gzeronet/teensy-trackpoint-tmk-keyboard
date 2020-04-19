@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+*.eep
+*.lss
+*.sym
+
+obj_tp60_pjrc/
