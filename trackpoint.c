@@ -45,10 +45,11 @@ void setDataState(uint8_t state) {
 }
 
 void trackpoint_reset(Trackpoint* tp) {
-    DDRD |= (1<<2);
-    PORTD |= (1<<2);
+    // PIN_D6 RST
+    DDRD |= (1<<6);
+    PORTD |= (1<<6);
     _delay_ms(2000); // empirical value
-    PORTD &= ~(1<<2);
+    PORTD &= ~(1<<6);
 }
 
 void getDataBit(Trackpoint* tp) {
