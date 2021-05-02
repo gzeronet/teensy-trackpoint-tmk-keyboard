@@ -92,7 +92,7 @@ matrix_row_t matrix_get_row(uint8_t row)
 
 /* Column pin configuration
  * col: 0   1   2   3   4   5   6   7   8   9   10  11  12
- * pin: B3  B2  B1  B7  B6  B5  B4  D7  D4  E6  D5  C7  C6  (Rev.TP)
+ * pin: B7  B3  B2  B1  B6  B5  B4  D7  D4  E6  D5  C7  C6  (Rev.TP)
  */
 static void  init_cols(void)
 {
