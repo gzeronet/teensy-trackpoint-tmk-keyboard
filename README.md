@@ -2,13 +2,23 @@ If you like this combination, you must know TEX Yoda, miniguru.
 
 Nooooooo?
 
-![](img/tpgh60.png)
-
 # Trackpoint & tmk-keyboard on teensy
 ---
 ### Do you wanna a customed layout keyboard (i.e., gh60) with trackpoint module working on it?
 
-Okey, go aboard. this guide will show you how to DIY.
+Okey, go aboard. This guide will show you how to build it.
+
+---
+
+## Day 1
+
+Add custom keyboard [layout](http://www.keyboard-layout-editor.com/).
+
+![](img/keyboard-layout.png)
+
+## Day 2
+
+To be continue...
 
 ---
 
@@ -53,8 +63,6 @@ Command for build hex file: tp60_pjrc.hex
     make KEYMAP=tp -f Makefile.pjrc
 
 And then, use [teensy loader](https://www.pjrc.com/teensy/loader.html).
-
-### To be continue...
 
 ---
 
