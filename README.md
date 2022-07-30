@@ -18,6 +18,12 @@ Add custom keyboard [layout](http://www.keyboard-layout-editor.com/).
 
 ## Day 2
 
+Add pc plate [layout](img/tp50-plate.dxf)
+
+![](img/tp50-plate.svg)
+
+## Day 3
+
 To be continue...
 
 ---
